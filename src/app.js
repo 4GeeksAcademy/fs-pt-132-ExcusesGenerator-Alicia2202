@@ -28,15 +28,22 @@ window.onload = function () {
   // Referencias a los elementos del DOM
   const excuseElement = document.getElementById('excusa');
   const btnElement = document.getElementById('btn-generar');
-  
+  //Selecciona imagen
+  const imgElement = document.getElementById('imagen-excusa');
 
   // Generar la primera excusa al cargar la página
-  excuseElement.innerHTML = excuseGenerator();
+  const updateAll = () => {
+    // 1. Cambia el texto
+    excuseElement.innerHTML = excuseGenerator();
+
+    // 2. Cambia la imagen (añadimos un número aleatorio para que no se repita)
+    const randomNumber = Math.floor(Math.random() * 1000);
+    imgElement.src = `https://picsum.photos/400/300?random=${randomNumber}`;
+  };
+  updateAll();
 
   // ESCUCHADOR DEL BOTÓN: Aquí ocurre la magia sin recargar
-  btnElement.addEventListener("click", () => {
-    excuseElement.innerHTML = excuseGenerator();
-  });
+  btnElement.addEventListener("click", updateAll);
 };
 
 document.addEventListener('DOMContentLoaded', excusas);
