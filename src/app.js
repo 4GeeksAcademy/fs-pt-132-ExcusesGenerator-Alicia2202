@@ -46,4 +46,3 @@ window.onload = function () {
   btnElement.addEventListener("click", updateAll);
 };
 
-document.addEventListener('DOMContentLoaded', excusas);
