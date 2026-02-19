@@ -14,24 +14,34 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body onload="excuseGenerator()">
+<!--Para alinear el body verticalmente y ocupe toda la pantalla-->
+
+<body class="d-flex align-items-center" style="min-height: 100vh;">
   <!-- Write your HTML code here, you can delete everything withing the body tags -->
-  <div class="container-fluid text-center">
-    <h1 class="mt-5">This is the excuse</h1>
-    <h1 id="excusa" class="p-4">Generating excuse...</h1>
-    <div class="row justify-content-center mt-3">
-      <div class="col-10 col-md-4">
-        <button id="btn-generar" class="btn btn-primary btn-lg w-100 shadow">
-          New Excuse
-        </button>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-4 p-4 text-center">
+          <!--Título de la card-->
+          <h5 class="text-uppercase text-muted small mb-2">Your excuse today is...</h5>
+          <!--Excusa-->
+          <h1 id="excusa" class="fw-bold mb-4 fs-4 fs-md-3">Generating excuse...</h1>
+          <!--Boton-->
+          <div class="d-grid mb-4">
+            <button id="btn-generar" class="btn btn-primary btn-lg rounded-3">
+              Generate New Excuse
+            </button>
+          </div>
+          <!--Imagen-->
+          <div class="rounded-4 shadow-sm overflow-hidden">
+            <img id="imagen-excusa" src="https://picsum.photos/400/300" class="img-fluid w-100" alt="Excuse image" />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mt-4">
-      <img id="imagen-excusa" src="https://picsum.photos/400/300" class="img-fluid rounded shadow-lg" />
-    </div>
-
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
+  </div>
+  <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
+  <script type="module" src="/app.js"></script>
 </body>
 
 </html>
