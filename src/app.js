@@ -25,7 +25,7 @@ const excuseGenerator = () => {
 console.log(excuseGenerator())
 
 window.onload = function () {
-  // Referencias a los elementos del DOM
+  
   const excuseElement = document.getElementById('excusa');
   const btnElement = document.getElementById('btn-generar');
   //Selecciona imagen
@@ -33,16 +33,16 @@ window.onload = function () {
 
   // Generar la primera excusa al cargar la página
   const updateAll = () => {
-    // 1. Cambia el texto
+    // Cambia el texto de la excusa
     excuseElement.innerHTML = excuseGenerator();
 
-    // 2. Cambia la imagen (añadimos un número aleatorio para que no se repita)
+    // Cambia la imagen (añadimos un número aleatorio para que no se repita)
     const randomNumber = Math.floor(Math.random() * 1000);
     imgElement.src = `https://picsum.photos/400/300?random=${randomNumber}`;
   };
   updateAll();
 
-  // ESCUCHADOR DEL BOTÓN: Aquí ocurre la magia sin recargar
+  // Botón para cambiar de excusa
   btnElement.addEventListener("click", updateAll);
 };
 
